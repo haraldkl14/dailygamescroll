@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Daily Scroll – allow game iframes",
+  "version": "1.0.0",
+  "description": "Personal use: removes X-Frame-Options / CSP from the listed game sites, only for iframes embedded by the local feed (localhost / 127.0.0.1).",
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": [
+    "https://*.nytimes.com/*",
+    "https://worldle.teuteuf.fr/*",
+    "https://*.flagle.io/*",
+    "https://*.globle-game.com/*",
+    "https://*.plaingame.fun/*",
+    "https://*.krillion.io/*",
+    "https://*.playdailyroll.com/*",
+    "https://*.wordle.global/*",
+    "https://*.playwhowhatwheregame.com/*",
+    "https://*.magnitudle.com/*",
+    "https://*.dailyunfold.com/*"
+  ],
+  "background": { "service_worker": "background.js" }
+}
