@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>Daily Scroll</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="menu-toggle" class="chip" type="button" aria-controls="menu" aria-expanded="false" title="All games (M)">
+      <span aria-hidden="true">☰</span><span class="hide-sm">Games</span>
+    </button>
+    <div class="now" aria-live="polite">
+      <span id="game-title" class="now-title"></span>
+      <span id="progress" class="now-progress"></span>
+    </div>
+    <button id="done-toggle" class="chip done-toggle" type="button" aria-pressed="false" title="Toggle done for today (D)">
+      <span class="label">Mark done</span>
+    </button>
+  </header>
+
+  <main id="feed" class="feed"></main>
+
+  <div id="scrim" class="scrim" hidden></div>
+  <nav id="menu" class="menu" aria-label="Jump to game" hidden>
+    <div class="menu-head">
+      <span>Today's games</span>
+      <span id="done-count" class="muted"></span>
+    </div>
+    <ol id="menu-list" class="menu-list"></ol>
+    <p class="menu-foot muted">↑/↓ or K/J switch games · M menu · D done</p>
+  </nav>
+
+  <template id="slide-template">
+    <section class="slide">
+      <div class="frame-wrap">
+        <div class="placeholder" aria-hidden="true">Loading <span class="placeholder-name"></span>…</div>
+        <div class="fallback" hidden>
+          <p class="fallback-name"></p>
+          <p class="fallback-text muted">This game hasn't loaded. It may block embedding.</p>
+          <a class="newtab big-btn" target="_blank" rel="noopener">Open in new tab →</a>
+          <button class="keep-waiting link-btn" type="button">Keep waiting</button>
+        </div>
+      </div>
+      <div class="slide-bar">
+        <button class="nav-btn prev" type="button">↑ Previous</button>
+        <a class="newtab small-link" target="_blank" rel="noopener">Doesn't load? Open in new tab →</a>
+        <button class="nav-btn next" type="button">Next game ↓</button>
+      </div>
+    </section>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
